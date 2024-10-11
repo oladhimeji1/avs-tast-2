@@ -21,10 +21,14 @@ app.get("*", (req, res) => {
   res.send("<h2> Page not found</h2>");
 });
 
+const mongoURI = 'mongodb+srv://temidayoafotem:8Rm6O03m368z3aTC@rccg.lbnbl.mongodb.net/';
+// const mongoURI = "mongodb://localhost:27017/bookDB"
+
+
 // Port configuration
 app.listen(port, () => {
   mongoose
-    .connect("mongodb://localhost:27017/bookDB", {
+    .connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
